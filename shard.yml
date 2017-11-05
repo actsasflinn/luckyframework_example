@@ -1,0 +1,21 @@
+name: lucky_test
+version: 0.1.0
+
+authors:
+  - Flinn <flinn@actsasflinn.com>
+
+targets:
+  lucky_test:
+    main: src/lucky_test.cr
+
+crystal: 0.23.1
+
+license: MIT
+
+dependencies:
+  lucky_web:
+    github: luckyframework/web
+    version: ~> 0.4.2
+  lucky_migrator:
+    github: luckyframework/migrator
+    version: ~> 0.2.3
