@@ -34,6 +34,8 @@ class Widgets::ShowPage < BasePage
   end
 
   private def render_footer(widget)
+    link "Edit", to: Widgets::Edit.with(widget)
+    text " | "
     link "Back", to: Widgets::Index
   end
 end
