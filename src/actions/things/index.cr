@@ -1,4 +1,4 @@
-class Things::Index < BaseAction
+class Things::Index < BrowserAction
   get "/things" do
     things = ThingQuery.all.results
     render things: things

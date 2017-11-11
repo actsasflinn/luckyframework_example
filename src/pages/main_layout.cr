@@ -1,18 +1,18 @@
-class ApplicationLayout
+class MainLayout
   include LuckyWeb::Page
   include LuckyWeb::Layout
 
-  @page : BasePage
+  @page : MainPage
 
   render do
     html_doctype
 
-    html do
+    html lang: "en" do
       head do
         utf8_charset
         title @page.page_title
-        #css_link asset("css/app.css")
-        #js_link asset("js/app.js")
+        css_link asset("css/app.css")
+        js_link asset("js/app.js")
       end
 
       body do
