@@ -1,5 +1,5 @@
 class Home::Index < BrowserAction
   get "/" do
-    render LuckyWeb::WelcomePage
+    redirect to: Widgets::Index
   end
 end
