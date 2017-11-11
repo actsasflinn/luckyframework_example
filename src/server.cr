@@ -1,5 +1,7 @@
 require "./app"
 
+LuckyWeb::Router.add :get, "/", Widgets::Index
+
 server = HTTP::Server.new("127.0.0.1", 8080, [
   LuckyWeb::HttpMethodOverrideHandler.new,
   HTTP::ErrorHandler.new,

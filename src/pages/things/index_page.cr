@@ -1,4 +1,4 @@
-class Things::ListPage < BasePage
+class Things::IndexPage < BasePage
   needs things : Array(Thing)
 
   @page_title = "Thing"

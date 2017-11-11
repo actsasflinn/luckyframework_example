@@ -1,4 +1,4 @@
-class Widgets::ListPage < BasePage
+class Widgets::IndexPage < BasePage
   needs widgets : Array(Widget)
 
   @page_title = "Widgets"
@@ -15,7 +15,7 @@ class Widgets::ListPage < BasePage
         tr class: "widget" do
           td widget.id.to_s
           td do
-            a widget.name, href: "/widgets/#{widget.id}"
+            link widget.name, to: "/widgets/#{widget.id}"
           end
           td widget.color.to_s
           td widget.count.to_s

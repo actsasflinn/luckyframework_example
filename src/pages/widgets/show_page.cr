@@ -27,7 +27,7 @@ class Widgets::ShowPage < BasePage
       span @widget.updated_at.to_s
     end
 
-    a href: "/" do
+    link to: Widgets::Index do
       button "Back"
     end
   end
