@@ -1,4 +1,5 @@
 class Widgets::EditPage < BasePage
+  include Widgets::Components
   needs widget_form : WidgetForm
   needs widget : Widget
 
@@ -9,24 +10,7 @@ class Widgets::EditPage < BasePage
 
   private def render_widget_form(f, w)
     form_for Widgets::Update.with(w) do
-      div class: "field" do
-        label_for f.name
-        text_input f.name
-        errors_for f.name
-      end
-
-      div class: "field" do
-        label_for f.color
-        text_input f.color
-        errors_for f.color
-      end
-
-      div class: "field" do
-        label_for f.count
-        text_input f.count
-        errors_for f.count
-      end
-
+      render_widget_form_fields(f)
       submit "Save Widget"
     end
   end
