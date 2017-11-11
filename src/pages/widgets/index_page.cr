@@ -16,16 +16,20 @@ class Widgets::IndexPage < BasePage
       th "Count"
       th "Created At"
       th "Updated At"
+      th "Actions"
       widgets.each do |widget|
         tr class: "widget" do
           td widget.id.to_s
-          td do
-            link widget.name, to: Show.with(widget)
-          end
+          td widget.name
           td widget.color.to_s
           td widget.count.to_s
           td widget.created_at.to_s
           td widget.updated_at.to_s
+          td do
+            link "Show", to: Show.with(widget)
+            text " | "
+            link "Edit", to: Edit.with(widget)
+          end
         end
       end
     end
