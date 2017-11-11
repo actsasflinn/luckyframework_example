@@ -4,6 +4,10 @@ class Widgets::IndexPage < BasePage
   @page_title = "Widgets"
 
   render do
+    render_list(@widgets)
+  end
+
+  private def render_list(widgets)
     table class: "widgets" do
       th "ID"
       th "Name"
@@ -11,11 +15,11 @@ class Widgets::IndexPage < BasePage
       th "Count"
       th "Created At"
       th "Updated At"
-      @widgets.each do |widget|
+      widgets.each do |widget|
         tr class: "widget" do
           td widget.id.to_s
           td do
-            link widget.name, to: "/widgets/#{widget.id}"
+            link widget.name, to: Show.with(widget)
           end
           td widget.color.to_s
           td widget.count.to_s
