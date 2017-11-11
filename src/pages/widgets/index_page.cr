@@ -29,6 +29,8 @@ class Widgets::IndexPage < BasePage
             link "Show", to: Show.with(widget)
             text " | "
             link "Edit", to: Edit.with(widget)
+            text " | "
+            link "Delete", to: Delete.with(widget)
           end
         end
       end
