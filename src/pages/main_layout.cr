@@ -2,7 +2,7 @@ class MainLayout
   include LuckyWeb::Page
   include LuckyWeb::Layout
 
-  @page : MainPage
+  @page : BasePage
 
   render do
     html_doctype

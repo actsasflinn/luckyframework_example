@@ -6,6 +6,10 @@ abstract class BasePage
   # Example:
   #   assign current_user : User
 
+  macro inherited
+    layout MainLayout
+  end
+
   @page_title : String?
 
   def page_title
