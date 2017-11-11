@@ -5,6 +5,7 @@ class Widgets::IndexPage < BasePage
 
   render do
     render_list(@widgets)
+    render_footer
   end
 
   private def render_list(widgets)
@@ -28,5 +29,9 @@ class Widgets::IndexPage < BasePage
         end
       end
     end
+  end
+
+  private def render_footer
+    link "New", to: New
   end
 end
