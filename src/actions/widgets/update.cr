@@ -3,9 +3,8 @@ class Widgets::Update < BrowserAction
     widget = WidgetQuery.new.find(id)
     WidgetForm.update(widget, params) do |form, updated_widget|
      if updated_widget
-       redirect to: Show.with(widget)
+       redirect to: Show.with(updated_widget)
      else
-       redirect to: Show.with(widget)
        render EditPage, widget_form: form, widget: updated_widget
      end
     end
